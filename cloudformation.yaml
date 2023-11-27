@@ -44,13 +44,6 @@ Resources:
       Tags:
         - Key: Name
           Value: MyRouteTable
-  PublicRoute:
-    Type: AWS::EC2::Route
-    DependsOn: VPCGatewayAttachment
-    Properties:
-      RouteTableId: !Ref RouteTable
-      DestinationCidrBlock: 0.0.0.0/0
-      GatewayId: !Ref InternetGateway
   PrivateRoute:
     Type: AWS::EC2::Route
     Properties:
